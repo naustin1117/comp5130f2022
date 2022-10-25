@@ -1,0 +1,28 @@
+<html>
+         <head>
+                 <link href="styles.css"  rel="stylesheet">
+                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+         </head>
+         <body>
+                <div id="nav-placeholder">
+
+                </div>
+                <script>
+                        $(function(){
+                                $("#nav-placeholder").load("nav.html");
+                        });
+                </script>
+                 <h1> Contact Me</h1>
+		 <p> Email: Nicholas_Austin@student.uml.edu </p>
+		 <p> Personal Email: naustin9716@gmail.com </p>
+                 <p> Or leave your name and email address and I'll reach out to you!</p>
+                
+                <form class='emailform' action="myprocessingscript.php" method="POST">
+                        <input name="field1" type="text" placeholder="FirstName"/><br>
+                        <input name="field2" type="text" placeholder="LastName"/><br>
+                        <input name="field3" type="text" placeholder="Email"/><br>
+                        <input type="submit" name="submit" value="Save Data">
+                </form>
+
+         </body>
+ </html>            

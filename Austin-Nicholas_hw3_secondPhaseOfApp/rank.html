@@ -1,0 +1,28 @@
+<html>
+         <head>
+                 <link href="styles.css"  rel="stylesheet">
+                 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+         </head>
+         <body>
+                <div id="nav-placeholder">
+
+                </div>
+                <script>
+                        $(function(){
+                                $("#nav-placeholder").load("nav.html");
+                        });
+                </script>
+                <h1> Project Ideas</h>
+                <p> Please vote are your most favorite Ideas!</p>
+                <form class='projectform' action="projectprocessingscript.php" method="POST">
+                        <label for="PC parts">Used PC parts/electronics Marketplace</label>
+                        <input name="field1" type="radio" value="PC parts"/><br>
+                        <label for="Reminder Application">Reminder Application</label>
+                        <input name="field1" type="radio" value="Reminder Application"/><br>
+                        <label for="Other">Other</label>
+                        <input name="field1" type="radio" value="Other"/><br>
+                        <input type="submit" name="submit" value="Save Data">
+                </form>
+
+         </body>
+ </html>            

@@ -1,0 +1,68 @@
+body {
+  background-color: powderblue;
+  text-align: center;
+}
+h1 {
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+p {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+	width: auto;
+	height: auto;
+	max-width: 30%;
+	max-height: 30%;
+}
+ul.nav {
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #0066b2;
+}
+
+li.nav {
+	float: left;
+	border-right: 1px solid blue;
+}
+
+ul.aboutme{
+	list-style-type: none;
+}
+li.aboutme{
+	color: red;
+}
+#navbarItem {
+	display:block;
+	padding: 8px;
+	background-color: grey;
+	text-align: center;
+	padding: 14px 16px;
+	color:white;
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+}
+li img{
+	background-color: white;
+	max-height: 7%;
+	max-width: 8%;
+	border-radius:5px;
+	float: right;
+	
+}
+li:last-child{
+	border-right: none;
+}
+
+img.personalphoto{
+	max-width: 50%;
+	max-height: 50%;
+	width: auto;
+	height: auto;
+	border-radius: 50%;
+}
+
