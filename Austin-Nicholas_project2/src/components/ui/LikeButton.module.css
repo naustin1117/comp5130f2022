@@ -1,0 +1,26 @@
+.button {
+  text-align: center;
+  background-color: white;
+  align-self: left;
+  text-align: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: thin;
+  cursor: pointer;
+}
+
+.btnon {
+  color: red;
+}
+
+.btnoff {
+  color: none;
+}
+
+.button:hover,
+.button:active {
+  background-color: grey;
+}
