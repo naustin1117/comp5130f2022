@@ -1,6 +1,6 @@
 import classes from "./LikeButton.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+/* import { faHeart } from "@fortawesome/free-solid-svg-icons"; */
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "./LikeButton.module.css";
@@ -22,7 +22,7 @@ function LikeButton() {
         whileTap={{ scale: 0.9 }}
       >
         <FontAwesomeIcon
-          icon={faHeart}
+          /* icon={faHeart} */
           className={state ? classes.btnon : classes.btnoff}
         />
       </motion.button>

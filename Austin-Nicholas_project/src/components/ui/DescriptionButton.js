@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { faImage } from "@fortawesome/free-solid-svg-icons";
+/* import { faImage } from "@fortawesome/free-solid-svg-icons"; */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "./DescriptionButton.module.css";
 import { useState } from "react";
@@ -17,7 +17,7 @@ function DescriptionButton(props) {
           setState(true);
         }}
       >
-        <FontAwesomeIcon icon={faImage} />
+      {/*   <FontAwesomeIcon icon={faImage} /> */}
       </motion.button>
       <Modal
         show={state}

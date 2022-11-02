@@ -5,7 +5,7 @@ function Layout(props) {
   return (
     <div>
       <MainNavigation />
-      <h3 className={classes.header}>Brought to you by NASA's image API</h3>
+      <h3 className={classes.header}>Nick Austin's website</h3>
       <main className={classes.main}>{props.children}</main>
     </div>
   );
