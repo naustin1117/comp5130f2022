@@ -15,5 +15,5 @@ app.get('/quit', function(req,res) {
     res.send({result: "Peace"})
 })
 
-app.listen(API_PORT, () => console.log('Listening on port ${API_PORT}'));
+app.listen(API_PORT, () => console.log('Listening on port', API_PORT));
 
