@@ -1,0 +1,18 @@
+.button {
+  text-align: center;
+  background-color: white;
+  align-self: left;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: thin;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button:hover,
+.button:active {
+  background-color: grey;
+}
