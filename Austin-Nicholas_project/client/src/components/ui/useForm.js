@@ -3,10 +3,26 @@ import validation from "./Validation";
 
 const useForm = (submitForm) => {
 
+    const createUser = async () => {
+        const newData = await fetch('/api', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            ...values
+        })
+        })
+        .then(res => res.json());
+    }
+
+
     const [values, setValues] = useState({
-        name:"",
-        email:"",
-        password:""
+        UserID: 1000,
+        Username:"",
+        Email:"",
+        Password:""
     });
 
     const [errors, setErrors] = useState({});
@@ -28,7 +44,9 @@ const useForm = (submitForm) => {
 
     useEffect(() =>{
         if(Object.keys(errors).length === 0 && dataIsCorrect){
+            createUser();
             submitForm(true);
+            
         }
 
     }, [errors]);

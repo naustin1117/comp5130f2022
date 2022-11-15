@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const SigninForm = () => {
 
     const [values, setValues] = useState({
-        name:"",
-        email:"",
-        password:""
+        Username:"",
+        Email:"",
+        Password:""
     });
 
     const [errors, setErrors] = useState({});
@@ -19,10 +19,28 @@ const SigninForm = () => {
         })
     }
 
+
+    const getUser = async () => {
+        console.log("starting");
+        const newData = await fetch('/user', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            email: values.Email
+        })
+        })
+        .then(res => res.json());
+    }
+
     const handleFormSubmit = (event) => {
+        getUser();
         event.preventDefault();
         setErrors(validation(values));
     }
+
     return (
         <div className={classes.container}>
             <div className={classes.wrapper}>
@@ -35,8 +53,8 @@ const SigninForm = () => {
                         <input 
                         className={classes.input} 
                         type="email" 
-                        name="email" 
-                        value={values.email}
+                        name="Email" 
+                        value={values.Email}
                         onChange={handleChange}
                         />
                         {errors.email && <p className={classes.error}>{errors.email}</p>}
@@ -46,14 +64,14 @@ const SigninForm = () => {
                         <input 
                         className={classes.input} 
                         type="text" 
-                        name="password" 
-                        value={values.password}
+                        name="Password" 
+                        value={values.Password}
                         onChange={handleChange}
                         />
                         {errors.password && <p className={classes.error}>{errors.password}</p>}
                     </div>
                     <div>
-                        <button className={classes.submit} onClick={handleFormSubmit}>
+                        <button className={classes.submit} onClick={getUser}>
                             Log in
                         </button>
                     </div>

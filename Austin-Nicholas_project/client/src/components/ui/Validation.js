@@ -1,17 +1,17 @@
 const validation = (values) => {
     let errors={};
-    if(!values.fullname){
-        errors.fullname="Name is required."
+    if(!values.Username){
+        errors.Username="Name is required."
     }
-    if(!values.email){
-        errors.email="Email is required."
-    } else if(!/\S+@\S+\.\S+/.test(values.email)){
-        errors.email="Email is invalid."
+    if(!values.Email){
+        errors.Email="Email is required."
+    } else if(!/\S+@\S+\.\S+/.test(values.Email)){
+        errors.Email="Email is invalid."
     }
-    if(!values.password){
-        errors.password="Password is required"
-    } else if(values.password.length < 5) {
-        errors.password="Password must be longer than 5 characters."
+    if(!values.Password){
+        errors.Password="Password is required"
+    } else if(values.Password.length < 5) {
+        errors.Password="Password must be longer than 5 characters."
     }
 
     return errors;
