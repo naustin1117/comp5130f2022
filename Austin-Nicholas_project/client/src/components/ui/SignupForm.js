@@ -71,10 +71,6 @@ const SignupForm = ({ submitForm }) => {
                             Submit
                         </button>
                     </div>
-                    <div>
-                        <p>UserID: {returnData.UserID}</p>
-                        <p>{values.username}</p>
-                    </div>
                 </form>
             </div>
         </div>

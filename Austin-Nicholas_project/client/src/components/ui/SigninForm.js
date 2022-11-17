@@ -12,6 +12,8 @@ const SigninForm = () => {
 
     const [errors, setErrors] = useState({});
 
+    const [value, setValue] = useState("SHEIT");
+
     const handleChange = (event) => {
         setValues({
             ...values,
@@ -21,15 +23,15 @@ const SigninForm = () => {
 
 
     const getUser = async () => {
-        console.log("starting");
-        const newData = await fetch('/user', {
+        const newData = await fetch('/login', {
         method: "POST",
         headers: {
             'content-type': 'application/json',
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            email: values.Email
+            Email: values.Email,
+            Password: values.Password
         })
         })
         .then(res => res.json());
@@ -79,6 +81,9 @@ const SigninForm = () => {
                         <p className={classes.paragraph}>
                             Don't have an account? <Link to="/Signup">Sign Up</Link>
                         </p>
+                    </div>
+                    <div>
+                        <p>{value}</p>
                     </div>
                 </form>
             </div>

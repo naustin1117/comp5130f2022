@@ -1,27 +1,26 @@
 const config            = require('./dbConfig'),
-sqlConnectionToserver = require('mssql');
+sqlConnectionToserver = require('mssql'),
+bcrypt = require('bcrypt');
 
 
-const getUsers = async(email) => {
+const getUser = async(User) => {
     try {
         let pool = await sqlConnectionToserver.connect(config);
-        let users = pool.request().query(`SELECT * FROM UserAuthentication WHERE Email = '${email}'`);
-        console.log(users);
-        return users;
+        let user = await pool.request().query(`SELECT * FROM UserAuthentication WHERE Email = '${User.Email}'`);
+        return user;
     }
-    catch(error){
+    catch(error) {
         console.log(error);
     }
 }
-
-const getUser = async(User) => {
-    let pool = await sqlConnectionToserver.connect(config);
-    let users = pool.request().query("SELECT * FROM UserAuthentication WHERE User")
-}
 const createUser = async(User) => {
     try {
+        let hash = await bcrypt.hash(User.Password,10);
+        console.log(hash.length);
+        let response = await bcrypt.compare('123456',hash);
+        console.log(response);
         let pool = await sqlConnectionToserver.connect(config);
-        let users = await pool.request().query(`INSERT INTO UserAuthentication VALUES (${User.UserID},'${User.Username}','${User.Email}','${User.Password}')`);
+        let users = await pool.request().query(`INSERT INTO UserAuthentication VALUES (${User.UserID},'${User.Username}','${User.Email}','${hash}')`);
         console.log(users);
         return users;
     }
@@ -32,5 +31,5 @@ const createUser = async(User) => {
 
 module.exports = {
     createUser,
-    getUsers
+    getUser
 }

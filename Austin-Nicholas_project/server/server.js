@@ -1,6 +1,7 @@
 const express = require('express'),
       cors    = require('cors'),
-      dbOperation = require('./dbFiles/dbOperation');
+      dbOperation = require('./dbFiles/dbOperation'),
+      bcrypt = require('bcrypt');
 
 
 const API_PORT = process.env.PORT  || 5000;
@@ -15,17 +16,31 @@ app.post('/api', async(req,res) => {
     console.log("creating new user");
     console.log(req.body);
     await dbOperation.createUser(req.body);
-    const result = await dbOperation.getUsers(req.body.name);
-    res.send(result.recordset);
+    res.send("User created!");
 })
 
-//this is a call to get a specific user
-app.post('/user', async(req,res) => {
+//Call when user logs in (checks the stored hash with the password hash stored in the database)
+app.post('/login', async(req,res) => {
     console.log("getting user");
-    console.log(req.body);
-    const result = await dbOperation.getUsers(req.body.Email);
-    res.send(result.recordset);
-    
+    const user = await dbOperation.getUser(req.body);
+    if(user === null){
+        return res.status(400).send("Cannot find user");
+    }
+    try {
+        let hash = user.recordset[0].Password;
+        let password = req.body.Password;
+        let answer = await bcrypt.compare(password, hash);
+        if(answer){
+            console.log("they are the same");
+            res.send(true);
+        } else {
+            console.log("This sucks ass");
+            res.send('Not Allowed');
+        }
+    } 
+    catch{
+        res.status(500).send();
+    }
 })
 
 //this is call to server to quit
