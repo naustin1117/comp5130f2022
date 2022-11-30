@@ -25,6 +25,9 @@ function MainNavigation() {
           <NavLink to="/Signin" activeStyle>
             Sign In
           </NavLink>
+          <NavLink to="/NewListing" activeStyle>
+            Create Listing
+          </NavLink>
         </NavMenu>
       </nav>
     </header>

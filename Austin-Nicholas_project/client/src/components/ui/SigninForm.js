@@ -12,8 +12,6 @@ const SigninForm = () => {
 
     const [errors, setErrors] = useState({});
 
-    const [value, setValue] = useState("SHEIT");
-
     const handleChange = (event) => {
         setValues({
             ...values,
@@ -81,9 +79,6 @@ const SigninForm = () => {
                         <p className={classes.paragraph}>
                             Don't have an account? <Link to="/Signup">Sign Up</Link>
                         </p>
-                    </div>
-                    <div>
-                        <p>{value}</p>
                     </div>
                 </form>
             </div>
