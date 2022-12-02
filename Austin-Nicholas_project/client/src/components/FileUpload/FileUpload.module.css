@@ -1,0 +1,11 @@
+.filecard {
+  background-color: rgb(225, 225, 225);
+  border: 3px dashed black;
+  padding: 1em;
+  min-width: 300px;
+  min-height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
