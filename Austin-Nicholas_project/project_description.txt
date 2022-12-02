@@ -1,0 +1,17 @@
+My goal for this project was to create a marketplace for used PC parts similar to Ebay or SidelineSwap.
+I did some research when deciding on a project and found that there aren't very many marketplaces that enable people
+to sell their old computers and electronics. I wanted to create a web application for this but had 
+to make a decision of what framework I would use to accomplish this task.
+I wrote my research paper on a few different frameworks such and Vue, React and Angular. I decided
+to go with React. Based on my research it was something that was easy to start out with and wasn't full
+stack like Angular so there wasn't as much learning needed to get started. Also, I chose React over 
+Vue because while they both are lightweight and easy to use front-end frameworks, React is a bit older 
+and there is more information and guides out there to help new people get started.
+Because of my lack of experience things took me much longer than expected. However,
+I still really enjoyed this project and was able to play around with
+various techonologies that I have never used previously. This was my first full stack application that
+I had ever made and I probably bit off a bit more than I could chew. Because of this the application 
+probably seems like it is somewhat incomplete which it is because I still have some finishing touches
+that I need to work out. However, all and all I feel that I learned a lot on this project and learned
+more about Databases and backend, animation and improved my React skills along with becoming more well
+versed in css styling. 
