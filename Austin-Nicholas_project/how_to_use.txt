@@ -1,0 +1,6 @@
+Using the application should be self explanatory.
+Currently some things aren't working properly However
+I plan on submitting another submission where the 
+backend for listing an item you want to sell will
+be fully functional and where it will authenticate
+users who make accounts.
