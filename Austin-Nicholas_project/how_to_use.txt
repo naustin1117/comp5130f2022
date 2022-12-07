@@ -1,6 +1,7 @@
 Using the application should be self explanatory.
-Currently some things aren't working properly However
-I plan on submitting another submission where the 
-backend for listing an item you want to sell will
-be fully functional and where it will authenticate
-users who make accounts.
+Simply Create an Account. This should automatically sign you in and then 
+using the nav bar you should be able to create a new listing. 
+This form doesn't have any checks because I didn't have the time
+to implement it. However, simply add an image file, Price and Title
+and then click submit. 
+You then will be able to see your listing on the home page.
