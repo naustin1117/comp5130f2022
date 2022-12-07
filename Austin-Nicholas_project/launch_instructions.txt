@@ -3,26 +3,9 @@ Here are my detailed instructions to get started.
 found at https://nodejs.org/en/
 2. Once you do that you need to pull my project folder onto your local machine and go to the directory. 
 3. Once you have done this there are a few dependencies that need to be installed using npm.
-4. To install these packages just type in the command "npm install <package name>" into your terminal.
-5. The packages you need to install are:
-    - axios
-    - bcrypt
-    - concurrently
-    - cors
-    - fortawesome
-    - framer-motion
-    - nodejs
-    - react-dom
-    - react-fontawesome
-    - react-icons
-    - react-router-dom
-    - react-scripts
-    - styled-components
-6. Once you have installed all the dependencies simply type "npm run dev" this should start
+4. To install these packages just type in the command "npm install" into your terminal. This
+should install all necesarry packages to run the application. 
+5. Once you have installed all the dependencies simply type "npm run client" this should start
 the server and the react application.
-7. If this fails it should tell you if you are missing a dependencies. If you are
+6. If this fails it should tell you if you are missing a dependencies. If you are
 just run "npm install <package name>" and then try again. 
-8. If it isn't working but not saying you are missing a dependencies it could be because you are using 
-a different OS than I used to develop. This happened to me when I switched from Windows 10 computer to Mac.
-To remedy this situation simply run "rm -rf ./node_modules" and then run "npm run dev" again. Hopefully this
-will fix any issues you run into. 
