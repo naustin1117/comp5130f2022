@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "npm start --prefix server",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client": "npm start --prefix client"
   },
   "keywords": [],
   "author": "",
@@ -15,16 +13,14 @@
   "dependencies": {
     "@fortawesome/react-fontawesome": "github:fortawesome/react-fontawesome",
     "axios": "^1.2.0",
-    "bcrypt": "^5.1.0",
-    "concurrently": "^7.6.0",
-    "cors": "^2.8.5",
+    "firebase": "^9.14.0",
     "fortawesome": "^0.0.1-security",
     "framer-motion": "^7.6.9",
     "nodejs": "^0.0.0",
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-icons": "^4.6.0",
-    "react-router-dom": "^6.4.3",
+    "react-router-dom": "^6.4.4",
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.6"
   }

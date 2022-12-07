@@ -17,7 +17,7 @@
 
 .content {
   text-align: left;
-  padding: 10px;
+  padding: 8px;
 }
 
 .content h3 {
@@ -26,17 +26,12 @@
 }
 
 .content h4 {
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   color: grey;
 }
 
-.content p {
-  text-align: left;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-size: 0.75em;
-  font-family: "Source Sans Pro", sans-serif;
-  color: grey;
+.clear {
+  clear: both;
 }
 
 .button {

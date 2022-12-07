@@ -1,8 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import classes from "./SignupForm.module.css";
-import validation from "./Validation"
 import { Link } from "react-router-dom";
-const SigninForm = () => {
+import { useAuth } from '../contexts/AuthContext';
+
+const SigninForm = ({submitForm}) => {
+
+    const {login} = useAuth()
 
     const [values, setValues] = useState({
         Username:"",
@@ -12,6 +15,8 @@ const SigninForm = () => {
 
     const [errors, setErrors] = useState({});
 
+    const[dataIsCorrect, setDataIsCorrect] = useState(false);
+
     const handleChange = (event) => {
         setValues({
             ...values,
@@ -19,27 +24,25 @@ const SigninForm = () => {
         })
     }
 
-
-    const getUser = async () => {
-        const newData = await fetch('/login', {
-        method: "POST",
-        headers: {
-            'content-type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            Email: values.Email,
-            Password: values.Password
-        })
-        })
-        .then(res => res.json());
+    async function handleSubmit(e) {
+        e.preventDefault()
+        try {
+            setErrors({})
+            console.log(values.Email, values.Password)
+            await login(values.Email, values.Password)
+            setDataIsCorrect(true);
+        } catch {
+            setErrors(errors.login="Failed to sign in")
+        }
     }
 
-    const handleFormSubmit = (event) => {
-        getUser();
-        event.preventDefault();
-        setErrors(validation(values));
-    }
+    useEffect(() =>{
+        if(Object.keys(errors).length === 0 && dataIsCorrect){
+            login(values.Email, values.Password)
+            submitForm(true);
+        }
+
+    }, [errors]);
 
     return (
         <div className={classes.container}>
@@ -57,7 +60,6 @@ const SigninForm = () => {
                         value={values.Email}
                         onChange={handleChange}
                         />
-                        {errors.email && <p className={classes.error}>{errors.email}</p>}
                     </div>
                     <div className={classes.password}>
                         <label className={classes.label}>Password</label>
@@ -68,10 +70,10 @@ const SigninForm = () => {
                         value={values.Password}
                         onChange={handleChange}
                         />
-                        {errors.password && <p className={classes.error}>{errors.password}</p>}
                     </div>
                     <div>
-                        <button className={classes.submit} onClick={getUser}>
+                    {errors.login && <p className={classes.error}>{errors.login}</p>}
+                        <button className={classes.submit} onClick={handleSubmit}>
                             Log in
                         </button>
                     </div>

@@ -1,11 +1,76 @@
-.filecard {
-  background-color: rgb(225, 225, 225);
-  border: 3px dashed black;
-  padding: 1em;
-  min-width: 300px;
-  min-height: 230px;
+.container{
+  background: white;
+  width: 100%;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  align-items: stretch;
+  border-radius: 10px;
+}
+
+.wrapper{
+  background-color: white;
+  min-width: 350px;
+  min-height: 300px;
+  height: 300px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.header{
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
+.username,
+.email,
+.password{
+  margin: 20px;
+  color:black;
+  font-size: 16px;
+}
+
+
+.input{
+  height: 32px;
+  font-size: 20px;
+  outline: none;
+  width: 100%;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: 2px solid black;
+  margin-bottom: 10px;
+
+}
+
+button:active{
+  transform: translateY(2px);
+}
+.submit{
+  display: flex;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 25px;
+  color:white;
+  padding: 10px 60px;
+  background: black;
+  margin: auto;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: grey 8px 19px 38px,
+  black 0px 15px 12px;
+  
+}
+
+.error{
+  color: red;
+}
+
+.paragraph{
+  padding: 20px;
 }

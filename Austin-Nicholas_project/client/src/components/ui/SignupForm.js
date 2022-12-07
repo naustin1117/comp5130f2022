@@ -4,26 +4,9 @@ import useForm from "./useForm";
 
 const SignupForm = ({ submitForm }) => {
 
-    const[returnData, setReturnData] = useState(['hi there']);
-    const {handleChange, handleFormSubmit, values, errors} = useForm(submitForm);
-    //const [user, setUser] = useState({UserID: 0, Fullname: "", Email: "", Password: ""});
 
-    //These are calls to the database
-    const getData = async (url) => {
-        const newData = await fetch(url, {
-        method: "POST",
-        headers: {
-            'content-type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            username: values.Username
-        })
-        })
-        .then(res => res.json());
-        console.log(newData);
-        setReturnData(newData[0]);
-    }
+
+    const {handleChange, handleFormSubmit, values, errors} = useForm(submitForm);
 
 
     return (
@@ -64,7 +47,7 @@ const SignupForm = ({ submitForm }) => {
                             value={values.Password}
                             onChange={handleChange}
                         />
-                        {errors.password && <p className={classes.error}>{errors.Password}</p>}
+                        {errors.Password && <p className={classes.error}>{errors.Password}</p>}
                     </div>
                     <div>
                         <button className={classes.submit} onClick={handleFormSubmit}>

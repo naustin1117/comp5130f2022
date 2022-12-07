@@ -1,7 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 import SigninForm from '../components/ui/SigninForm'
+import Homepage from './Homepage';
   
 const SignUp = () => {
+  const [formIsSubmitted, setFormIsSubmitted] = useState(false);
+
+  const submitForm = () => {
+    setFormIsSubmitted(true);
+  }
   return (
     <div
       style={{
@@ -11,7 +17,7 @@ const SignUp = () => {
         height: '100vh'
       }}
     >
-      <SigninForm/>
+      {!formIsSubmitted ? <SigninForm submitForm={submitForm}/> : <Homepage />}
     </div>
   );
 };

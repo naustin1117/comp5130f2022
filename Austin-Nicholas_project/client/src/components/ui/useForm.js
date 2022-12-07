@@ -1,25 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import validation from "./Validation";
+import {useAuth} from '../contexts/AuthContext';
+
 
 const useForm = (submitForm) => {
 
-    const createUser = async () => {
-        const newData = await fetch('/api', {
-        method: "POST",
-        headers: {
-            'content-type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            ...values
-        })
-        })
-        .then(res => res.json());
-    }
-
+    const { signup } = useAuth()
 
     const [values, setValues] = useState({
-        UserID: 1000,
         Username:"",
         Email:"",
         Password:""
@@ -38,13 +26,18 @@ const useForm = (submitForm) => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        setErrors(validation(values));
-        setDataIsCorrect(true);
+        try {
+            signup(values.Email,values.Password)
+            setDataIsCorrect(true);
+            setErrors(validation(values));
+        } catch {
+            console.log(errors)
+        }
     };
 
     useEffect(() =>{
         if(Object.keys(errors).length === 0 && dataIsCorrect){
-            createUser();
+            signup(values.Email,values.Password);
             submitForm(true);
             
         }
