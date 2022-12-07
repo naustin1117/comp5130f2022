@@ -10,7 +10,7 @@ function Modal(props) {
     <modal className={classes.modal}>
       <motion.img
         src={props.photo}
-        alt={"damn"}
+        alt={"not available"}
         className={classes.image}
         onClick={props.onClick}
         initial={{ y: -1000 }}
